@@ -1,0 +1,41 @@
+<%= form_for @lesson, :html => { :multipart => true} do |f| %>
+  <% if @lesson.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@lesson.errors.count, "error") %> prohibited this lesson from being saved:</h2>
+
+      <ul>
+      <% @lesson.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+
+    <%= f.text_field :title, :placeholder => "Title of Lesson.." %>Title
+  </div>
+  <div class="field">
+
+    <%= f.text_field :goal, :placeholder => "Goal of Lesson.." %>Goal
+  </div>
+
+<p>
+    <% f.fields_for :assets do |builder| %>
+    <% render 'asset_fields', :f => builder %><br>
+    <% end %>
+</p>
+
+  <div class="field">
+
+    <%= f.hidden_field :course_id %>
+  </div>
+
+  <div class="actions">
+
+<button type="submit" class="btn btn-primary">
+  <i class="icon-ok"></i> Submit Lesson!
+</button>
+  </div>
+
+<% end %>

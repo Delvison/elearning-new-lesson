@@ -1,0 +1,62 @@
+<div class="row">
+
+  <div class="span4">
+   
+   <p id="notice"><%= notice %></p>
+   <p>    <% t = Course.find(@lesson.course_id) %>
+    <h2><%= t.name %></h2>
+
+
+   </p>
+   <p>
+   <b>Lesson Title:</b>
+   <%= @lesson.title %>
+   </p>
+
+   <b>Goal:</b>
+   <%= @lesson.goal %>
+   </p>
+    
+    </div>
+
+  <div class="span4">
+  <% if @lesson.assets.any? %>
+   <center><h3>Attachments</h3></center>
+   
+  <% else %>
+   <center><i>No attachments exist for this lesson.</i></center>
+  <% end %>
+
+   <table class="table table-striped table-bordered table-condensed">
+
+   <% for asset in @lesson.assets %>
+    <tr>
+    <td><%= asset.attachment_file_name %></td>
+    <td><%= link_to 'Show', asset %></td>
+    <td><%= link_to 'Edit', edit_asset_path(asset) %></td>
+    <td><%= link_to 'Destroy', asset, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+    </table>
+  <% if @lesson.assets.any? %>
+    <%= link_to "Download All", :controller => "lessons", :action => "download", :file_name => "#{@lesson.id}" %>
+   <% end %>
+   </div>
+  </div>
+
+
+<div>
+<h3>
+<%= link_to "+Add Attachment!", :controller => "assets", :action => "new", :lesson_id => @lesson %>
+</h3>
+
+<%= link_to 'Edit Lesson', edit_lesson_path(@lesson) %> |
+<%= link_to "Back to Course", course_path(@lesson.course_id) %>
+  <% if @lesson.assets.any? %>
+<% @lesson.bundle %>
+ <% end %>
+
+</div>
+
+
+

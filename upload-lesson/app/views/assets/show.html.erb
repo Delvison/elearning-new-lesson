@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+
+  <% t = Lesson.find(@asset.lesson_id) %>
+  <% c = Course.find(t.course_id) %>
+  <b>Course:</b>
+  <%= c.name %> <br>
+  <b>Lesson:</b>
+  <%= t.title %>
+</p>
+
+<p>
+  <b>FileName:</b>
+  <%= @asset.attachment_file_name %>
+</p>
+
+
+
+
+<%= link_to 'Edit', edit_asset_path(@asset) %> |
+<%= link_to "Back", lesson_path(@asset.lesson_id) %>

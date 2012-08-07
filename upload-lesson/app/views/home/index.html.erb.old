@@ -1,0 +1,81 @@
+<head>
+<title>Add a new course</title>
+</head>
+  <body>
+
+    <div class="center hero-unit">
+
+      <h1>Upload a new course!</h1>
+      <p>Please fill in the following fields and attatch the appropriate media.</p>
+    
+    <!-- /container -->
+    
+    <form class="text">
+  
+  <input type="text" class="span3" placeholder="Name..">  
+  <span class="help-inline">Name of Course</span>  
+  <br>
+  <input type="text" class="span3" placeholder="Category..">  
+  <span class="help-inline">Category of Course</span> 
+  <br>
+ <input type="text" class="span3" placeholder="Description..">  
+  <span class="help-inline">Course Description</span> 
+  <br>
+  
+<script language="javascript">
+fields = 0;
+function addInput() {
+if (fields != 10) {
+document.getElementById('text').innerHTML += "<input type='file' value='' /><br />";
+fields += 1;
+} else {
+document.getElementById('text').innerHTML += "<br />Only 10 upload fields allowed.";
+document.form.addit.disabled=true;
+addit.style.visibility='hidden';
+document.body.form["form"].removeChild(addit);
+}
+}
+</script>
+
+<form name="form">
+
+<table border="0">
+<tr>
+<td width="291">
+<input type="file" name="file" id="file">
+</td>
+<td>
+
+
+
+<button type="button" onClick="addInput()" name="addit" class="btn btn-small" > <i class="icon-plus"></i></button>
+</td></tr>
+</table>
+
+</form>
+<div id="text">
+</div>
+
+  <br>
+  
+  <button type="submit" class="btn btn-primary btn-large"><i class="icon-ok" value="Add input field"></i> Submit Course</button>  
+</form>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="bootstrap/docs/assets/js/jquery.js"></script>
+    <script src="bootstrap/docs/assets/js/bootstrap-transition.js"></script>
+    <script src="bootstrap/docs/assets/js/bootstrap-alert.js"></script>
+    <script src="bootstrap/docs/assets/js/bootstrap-modal.js"></script>
+    <script src="bootstrap/docs/assets/js/bootstrap-dropdown.js"></script>
+    <script src="bootstrap/docs/assets/js/bootstrap-scrollspy.js"></script>
+    <script src="bootstrap/docs/assets/js/bootstrap-tab.js"></script>
+    <script src="bootstrap/docs/assets/js/bootstrap-tooltip.js"></script>
+    <script src="bootstrap/docs/assets/js/bootstrap-popover.js"></script>
+    <script src="bootstrap/docs/assets/js/bootstrap-button.js"></script>
+    <script src="bootstrap/docs/assets/js/bootstrap-collapse.js"></script>
+    <script src="bootstrap/docs/assets/js/bootstrap-carousel.js"></script>
+    <script src="bootstrap/docs/assets/js/bootstrap-typeahead.js"></script>
+
+  </body>

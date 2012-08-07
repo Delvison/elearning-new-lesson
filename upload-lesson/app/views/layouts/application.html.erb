@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="text/javascript" src="http://gettopup.com/releases/latest/top_up-min.js"></script> 
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <title>eLearning</title>
+</head>
+  <body>
+ <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="nav btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+<img src="/assets/images/logo.gif">
+          <a class="brand" href="/">eLearning Project</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active"><a href="/">Home</a></li>
+              <li><a href="#about">About</a></li>
+
+              <li><a href="#contact">Contact</a></li>
+              <li><a href="/courses">Courses</a></li>
+              <li><a href="/lessons">Lessons</a></li>
+             </ul>
+           <div class="btn-group pull-right">
+
+            <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+              <i class="icon-user"></i> Username
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Profile</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Sign Out</a></li>
+            </ul>
+          </div>
+ 
+          </div><!--/.nav-collapse -->
+
+        </div>
+      </div>
+    </div>
+
+   <div class="container">
+     <div class="row">       
+      
+         <%= yield %>
+       
+     </div>
+   </div>
+   
+<div id="footer"></div>
+  </body>
+<hr>
+ <footer>
+        <p>&copy; NCU - MINElab 2012</p>
+      </footer>
+
+</html>
